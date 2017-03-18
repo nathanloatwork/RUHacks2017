@@ -15,7 +15,7 @@
 
     <!-- Theme CSS -->
     <link href="css/freelancer.css" rel="stylesheet">
-    
+
     <!-- Chart.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
 
@@ -77,7 +77,7 @@
                     <div class="intro-text">
                         <!-- <h1 class="name">Help Prevent Harassment</h1> -->
                         <hr class="star-light">
-                        <br /> 
+                        <br />
                         <div class="row">
                             <div class="col-lg-4 ">
                                 <p>{STAT 1 GOES HERE}Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.</p>
@@ -90,7 +90,7 @@
                             </div>
                         </div>
                         <br />
-                        <hr class="intro-divider"> 
+                        <hr class="intro-divider">
                         <span class="skills">We want to help alleviate harassment of any sort...</span>
                     </div>
                     <br />
@@ -104,7 +104,7 @@
                         </div>
                         <div class="col-lg-4 text-center">
                             <a href="#data" class="btn btn-lg btn-outline green">
-                                <i class="fa fa-download"></i> 
+                                <i class="fa fa-download"></i>
                                 Visualize Data
                             </a>
                         </div>
@@ -122,30 +122,30 @@
             <label for="formGroupInput">Type of  Harassment (Check more than one box if applicable)</label>
             <div class="form-check">
               <label class="form-check-label">
-                <input type="checkbox" class="form-check-input">
+                <input type="checkbox" name="checkSexual" class="form-check-input">
                 Sexual Harassment
               </label>
             </div>
             <div class="form-check">
               <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" value="">
+                <input class="form-check-input" name="checkWork" type="checkbox" value="">
                 Workplace Harassment
               </label>
             </div>
             <div class="form-check">
               <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" value="">
+                <input class="form-check-input" name="checkStreet" type="checkbox" value="">
                 Street Harassment
               </label>
             </div>
             <div class="form-check">
               <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" value="">
+                <input class="form-check-input" name="checkSchool" type="checkbox" value="">
                 Schoolplace Harassment (Bullying)
               </label>
               <div class="form-check">
                 <label class="form-check-label">
-                  <input class="form-check-input" type="checkbox" value="">
+                  <input class="form-check-input" name="checkOnline" type="checkbox" value="">
                   Online Harassment
                 </label>
               </div>
@@ -157,28 +157,28 @@
               <label for="formGroupInput">Relationship to Perpetrator</label>
             <div class="custom-controls-stacked">
     <label class="custom-control custom-radio">
-      <input id="radioStacked1" name="radio-stacked" type="radio" class="custom-control-input">
+      <input id="radioStackedStranger" name="radioStranger" type="radio" class="custom-control-input">
       <span class="custom-control-indicator"></span>
       <span class="custom-control-description">Stranger</span>
     </label>
   </div>
     <div class="custom-controls-stacked">
     <label class="custom-control custom-radio">
-      <input id="radioStacked2" name="radio-stacked" type="radio" class="custom-control-input">
+      <input id="radioStackedColleague" name="radioColleague" type="radio" class="custom-control-input">
       <span class="custom-control-indicator"></span>
       <span class="custom-control-description">Colleague</span>
     </label>
   </div>
   <div class="custom-controls-stacked">
   <label class="custom-control custom-radio">
-    <input id="radioStacked2" name="radio-stacked" type="radio" class="custom-control-input">
+    <input id="radioStackedAcquaintance" name="radioAcquaintance" type="radio" class="custom-control-input">
     <span class="custom-control-indicator"></span>
     <span class="custom-control-description">Acquaintance</span>
   </label>
 </div>
 <div class="custom-controls-stacked">
 <label class="custom-control custom-radio">
-  <input id="radioStacked2" name="radio-stacked" type="radio" class="custom-control-input">
+  <input id="radioStackedPeer" name="radioPeer" type="radio" class="custom-control-input">
   <span class="custom-control-indicator"></span>
   <span class="custom-control-description">School peer</span>
 </label>
@@ -187,62 +187,62 @@
 
 <div class="form-group">
   <label for="LocationInput">Please enter the enviornment in which the incident took place.</label>
-  <input type="Location" class="form-control" id="LocationInput" aria-describedby="Help" placeholder="Ex. Subway">
+  <input type="Location" class="form-control" name="location" id="LocationInput" aria-describedby="Help" placeholder="Ex. Subway">
   <small id="Help" class="form-text text-muted">Ex. Public area, school, workplace, etc.</small>
 </div>
 <div class="form-group">
   <label for="LocationCity">Please enter the city in which the incident took place.</label>
-  <input type="city" class="form-control" id="LocationCity" placeholder="Ex. Toronto">
+  <input type="city" class="form-control" name="city" id="LocationCity" placeholder="Ex. Toronto">
 </div>
 
   <div class="form-group">
-    <label for="exampleTextarea">Description of Incident</label>
-    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+    <label for="Textarea">Description of Incident</label>
+    <textarea class="form-control" name="descriptionTextarea" id="Textarea" rows="3"></textarea>
   </div>
 
         </form>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" name="submitButton" class="btn btn-primary">Submit</button>
         </div>
     </section>
 
-        
+
     <!-- data Section -->
-    
+
     <section class="success" id="data">
         <div class="panel panel-default">
         <div class = "panel-heading">
             <h2 class="text-center">data</h2>
-            <br />  
+            <br />
             <div class = "wrapper text-center">
-            
+
                 <a class="btn btn-primary" role="button" data-toggle="collapse" href="#lineChart" aria-expanded="false" aria-controls="collapseExample"> Line </a>
                 <a class="btn btn-primary" role="button" data-toggle="collapse" href="#mapChart" aria-expanded="false" aria-controls="collapseExample"> Map </a>
                 <a class="btn btn-primary" role="button" data-toggle="collapse" href="#pieChart" aria-expanded="false" aria-controls="collapseExample"> Pie </a>
-                
+
                 <div class="collapse" id="lineChart">
                     <div class="container">
                         <canvas id="displayLineChart"></canvas>
                     </div>
                 </div>
-                
+
                 <div class="collapse" id="mapChart">
                     <div class="container">
-                        
+
                         <canvas id="displayMapChart"></canvas>
-                        
+
                     </div>
                 </div>
                 <div class="collapse" id="pieChart">
                     <div class="container">
-                        
+
                         <canvas id="displayPieChart"></canvas>
-                        
+
                     </div>
                 </div>
-                
+
             </div>
     </section>
-    
+
     <script>
         Chart.pluginService.register({
 			beforeDraw: function (chart, easing) {
@@ -258,7 +258,7 @@
 			}
 		});
         var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
-        
+
 		var config = {
 			type: 'line',
 			data: {
@@ -283,7 +283,7 @@
         var ctx = document.getElementById('displayMapChart').getContext('2d');
         // <!-- we'll need to implement the Google Maps API here -->
     </script>
-    
+
     <script>
         $(document).ready(function(){
             $.ajax({
@@ -293,12 +293,12 @@
                 console.log(data);
                 var harassmentType = [];
                 var counts = [];
-                
+
                 for (var i in data){
                     harassmentType.push(data[i].type_id);
                     counts.push(data[i].counts);
                 }
-                
+
                 var chartdata = {
                     labels: harassmentType
                     datasets : [
@@ -320,7 +320,7 @@
                 console.log(data);
             }
         }
-        
+
     </script>
     </section>
     <!-- Contact Section -->
