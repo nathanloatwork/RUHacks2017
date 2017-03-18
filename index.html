@@ -417,43 +417,60 @@
         // <!-- we'll need to implement the Google Maps API here -->
     </script>
 
+    
     <script>
-        $(document).ready(function(){
-            $.ajax({
-                url: "http://localhost/php/harassmentTypeData.php"
-                method: "GET",
-                success: function(data) {
-                console.log(data);
-                var harassmentType = [];
-                var counts = [];
-
-                for (var i in data){
-                    harassmentType.push(data[i].type_id);
-                    counts.push(data[i].counts);
-                }
-
-                var chartdata = {
-                    labels: harassmentType
-                    datasets : [
-                        {
-                            label: "Harassment Counts by Type",
-                            backgroundColor = 'rgba(255, 255, 255, 1)',
-                            borderColor = 'rgba(255, 255, 255, 1)',
-                            data: counts
-                        }
-                    ]
-                };
-                var ctx = document.getElementById("displayPieChart").getContext('2d');
-                var pieChart = new Chart(ctx, {
-                    typ: 'pie',
-                    data: chartdata
-                });
-            },
-            error: function(data){
-                console.log(data);
-            }
-        }
-
+        var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
+        //$(document).ready(function(){
+          //  $.ajax({
+            //    url: "http://localhost/php/harassmentTypeData.php"
+              //  method: "GET",
+                //success: function(data) {
+                //console.log(data);
+                //var harassmentType = [];
+                //var counts = [];
+                
+                //for (var i in data){
+                  //  harassmentType.push(data[i].type_id);
+                    //counts.push(data[i].counts);
+                //}
+               
+                //var chartdata = {
+                  //  labels: harassmentType
+                    //datasets : [
+                      //  {
+                        //    label: "Harassment Counts by Type",
+                          //  backgroundColor = 'rgba(255, 255, 255, 1)',
+                            //borderColor = 'rgba(255, 255, 255, 1)',
+                            //data: counts
+                        //}
+                    //]
+                //};
+                //var ctx = document.getElementById("displayPieChart").getContext('2d');
+                //var pieChart = new Chart(ctx, {
+                  //  typ: 'pie',
+                    //data: chartdata
+                //});
+            //},
+            //error: function(data){
+              //  console.log(data);
+            //}
+        var ctx = document.getElementById("displayPieChart").getContext('2d');
+            var myChart = new Chart(ctx, {
+              type: 'pie',
+              data: {
+                labels: ["Sexual", "Workplace", "Street", "School", "Online"],
+                datasets: [{
+                  backgroundColor: [
+                    "#2ecc71",
+                    "#3498db",
+                    "#95a5a6",
+                    "#9b59b6",
+                    "#f1c40f"
+                  ],
+                  data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+                }]
+              }
+            });
     </script>
     </section>
     <!-- Contact Section -->
