@@ -154,14 +154,17 @@
         <div class = "panel-heading">
             <h2 class="text-center">data</h2>
             <div class = "wrapper text-center">
+            
                 <a class="btn btn-primary" role="button" data-toggle="collapse" href="#lineChart" aria-expanded="false" aria-controls="collapseExample"> Line </a>
                 <a class="btn btn-primary" role="button" data-toggle="collapse" href="#mapChart" aria-expanded="false" aria-controls="collapseExample"> Map </a>
                 <a class="btn btn-primary" role="button" data-toggle="collapse" href="#pieChart" aria-expanded="false" aria-controls="collapseExample"> Pie </a>
+                
                 <div class="collapse" id="lineChart">
                     <div class="container">
                         <canvas id="displayLineChart"></canvas>
                     </div>
                 </div>
+                
                 <div class="collapse" id="mapChart">
                     <div class="container">
                         
@@ -176,6 +179,7 @@
                         
                     </div>
                 </div>
+                
             </div>
     </section>
     
@@ -195,12 +199,14 @@
 			}
 		});
 
+        var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
+        
 		var config = {
 			type: 'line',
 			data: {
-				labels: ["January", "February", "March", "April", "May", "June", "July"],
+				labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
 				datasets: [{
-					label: "My First dataset",
+					label: "2017 Harassment Data",
 					data: [65, 0, 80, 81, 56, 85, 40],
 					fill: false
 				}]
@@ -222,27 +228,43 @@
     </script>
     
     <script>
-        var ctx = document.getElementById("displayPieChart").getContext('2d');
-        var myChart = new Chart(ctx, {
-        type: 'pie',
-        data: {
-        labels: ["M", "T", "W", "T", "F", "S", "S"],
-        datasets: [{
-        backgroundColor: [
-                "#2ecc71",
-                "#3498db",
-                "#95a5a6",
-                "#9b59b6",
-                "#f1c40f",
-                "#e74c3c",
-                "#34495e"
-              ],
-              data: [12, 19, 3, 17, 28, 24, 7]
-            }]
-          }
-        });
-    </script>
-    
+        $(document).ready(function(){
+            $.ajax({
+                url: "http://localhost/js/harassmentTypeData.php"
+                method: "GET",
+                success: function(data) {
+                console.log(data);
+                var harassmentType = [];
+                var counts = [];
+                
+                for (var i in data){
+                    harassmentType.push(data[i].type_id);
+                    counts.push(data[i].counts);
+                }
+                
+                var chartdata = {
+                    labels: harassmentType
+                    datasets : [
+                        {
+                            label: "Harassment Counts by Type",
+                            backgroundColor = 'rgba(255, 255, 255, 1)',
+                            borderColor = 'rgba(255, 255, 255, 1)',
+                            data: counts
+                        }
+                    ]
+                };
+                var ctx = document.getElementById("displayPieChart").getContext('2d');
+                var pieChart = new Chart(ctx, {
+                    typ: 'pie',
+                    data: chartdata
+                });
+            },
+            error: function(data){
+                console.log(data);
+            }
+        }
+        
+    </script>    
     
     <!-- Contact Section -->
     <section id="contact">
