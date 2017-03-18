@@ -321,12 +321,38 @@
                 </div>
 
                 <div class="collapse" id="mapChart">
-                    <div class="container">
-
-                        <canvas id="displayMapChart"></canvas>
-
+                    <div class="map">
+                        
+                        <div id="displayMapChart" style="width:100%;height:400px;"></div>
+                        
+                        <script>
+                            
+                            
+                            function myMap() {
+                            
+                            var mapProp= {
+                                center:new google.maps.LatLng(43.6532, -79.3832),
+                                zoom:10,
+                                mapTypeId: google.maps.MapTypeId.ROADMAP
+                            };
+                            
+                            var map=new google.maps.Map(document.getElementById("displayMapChart"),mapProp);
+                            }
+                            
+                            $scope.$on('displayMapChart', function (evt, myMap) {
+                                console.log("map initialized.");
+                                google.maps.event.trigger(myMap, 'resize');
+                            });
+                            
+                        </script>
+                        
+                        
+                                                
+                        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlFt8dkLa6kuPF11bzHHtx9UorCSVqy8s&callback=myMap"></script>
+                        
                     </div>
                 </div>
+		    
                 <div class="collapse" id="pieChart">
                     <div class="container">
 
