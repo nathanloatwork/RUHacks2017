@@ -149,6 +149,12 @@
                   Online Harassment
                 </label>
               </div>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input" name="checkReligious" type="checkbox" value="">
+                  Religious Harassment
+                </label>
+              </div>
             </div>
           </form>
           </div>
@@ -199,6 +205,95 @@
     <label for="Textarea">Description of Incident</label>
     <textarea class="form-control" name="descriptionTextarea" id="Textarea" rows="3"></textarea>
   </div>
+
+  <div class="form-group">
+      <label for="formGroupInput">What is victim's gender?</label>
+    <div class="custom-controls-stacked">
+      <label class="custom-control custom-radio">
+        <input id="radioStackedMale" name="radioMale" type="radio" class="custom-control-input">
+        <span class="custom-control-indicator"></span>
+        <span class="custom-control-description">Male</span>
+      </label>
+    </div>
+    <div class="custom-controls-stacked">
+      <label class="custom-control custom-radio">
+        <input id="radioStackedFemale" name="radioFemale" type="radio" class="custom-control-input">
+        <span class="custom-control-indicator"></span>
+        <span class="custom-control-description">Female</span>
+      </label>
+    </div>
+    <div class="custom-controls-stacked">
+      <label class="custom-control custom-radio">
+        <input id="radioStackedTrans" name="radioTrans" type="radio" class="custom-control-input">
+        <span class="custom-control-indicator"></span>
+        <span class="custom-control-description">Trans</span>
+      </label>
+    </div>
+    <div class="custom-controls-stacked">
+      <label class="custom-control custom-radio">
+        <input id="radioStackedNonBinary" name="radioNonBinary" type="radio" class="custom-control-input">
+        <span class="custom-control-indicator"></span>
+        <span class="custom-control-description">Non Binary/Gender Fluid</span>
+      </label>
+    </div>
+</div>
+
+<div class="form-group">
+  <label for="formGroupInput">What is victim's sexual orientation?</label>
+  <select class="custom-select" name="orientation">
+    <option selected>Sexual Orientation</option>
+    <option value="1">heterosexuality</option>
+    <option value="2">homosexuality</option>
+    <option value="3">bisexuality</option>
+    <option value="4">asexuality</option>
+  </select>
+</div>
+
+<div class="form-group">
+    <label for="formGroupInput">What is victim's ethnicity?</label>
+  <div class="custom-controls-stacked">
+    <label class="custom-control custom-radio">
+      <input id="radioStackedCaucasian" name="radioCauasian" type="radio" class="custom-control-input">
+      <span class="custom-control-indicator"></span>
+      <span class="custom-control-description">Cauasian</span>
+    </label>
+  </div>
+  <div class="custom-controls-stacked">
+    <label class="custom-control custom-radio">
+      <input id="radioStackedAfrican" name="radioAfrican" type="radio" class="custom-control-input">
+      <span class="custom-control-indicator"></span>
+      <span class="custom-control-description">African</span>
+    </label>
+  </div>
+  <div class="custom-controls-stacked">
+    <label class="custom-control custom-radio">
+      <input id="radioStackedEastAsian" name="radioEastAsian" type="radio" class="custom-control-input">
+      <span class="custom-control-indicator"></span>
+      <span class="custom-control-description">East Asian</span>
+    </label>
+  </div>
+  <div class="custom-controls-stacked">
+    <label class="custom-control custom-radio">
+      <input id="radioStackedSouthAsian" name="radioSouthAsian" type="radio" class="custom-control-input">
+      <span class="custom-control-indicator"></span>
+      <span class="custom-control-description">South Asian</span>
+    </label>
+  </div>
+  <div class="custom-controls-stacked">
+    <label class="custom-control custom-radio">
+      <input id="radioStackedHispanic" name="radioHispanic" type="radio" class="custom-control-input">
+      <span class="custom-control-indicator"></span>
+      <span class="custom-control-description">Hispanic/Latino</span>
+    </label>
+  </div>
+  <div class="custom-controls-stacked">
+    <label class="custom-control custom-radio">
+      <input id="radioStackedFirstNations" name="radioFirstNations" type="radio" class="custom-control-input">
+      <span class="custom-control-indicator"></span>
+      <span class="custom-control-description">First Nations</span>
+    </label>
+  </div>
+</div>
 
         </form>
         <button type="submit" name="submitButton" class="btn btn-primary">Submit</button>
