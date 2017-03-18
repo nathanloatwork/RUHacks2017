@@ -514,3 +514,43 @@ fieldset[disabled] .btn-success.active {
 div#maincontent {
   outline: none;
 }
+.red, .green {
+  padding: 20px 25px;
+  font-size: 2em;
+  font-weight:bold;
+}
+
+
+a.red,
+a.red:hover,
+a.red:focus,
+a.red:active,
+a.red.active {
+  color: white;
+  background:#bc2727;
+}
+.btn-outline.red:hover,
+.btn-outline.red:focus,
+.btn-outline.red:active,
+.btn-outline.red.active {
+  color: #bc2727;
+  background: white;
+  border: solid 2px white;
+}
+a.green,
+a.green:hover,
+a.green:focus,
+a.green:active,
+a.green.active {
+  color: white;
+  background:#1cbf5b;
+}
+
+.btn-outline.green:hover,
+.btn-outline.green:focus,
+.btn-outline.green:active,
+.btn-outline.green.active {
+  color: #1cbf5b;
+  background: white;
+  border: solid 2px white;
+}
