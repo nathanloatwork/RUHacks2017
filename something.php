@@ -112,17 +112,17 @@ EOF;
 $prep=$db->prepare($insertStatement);
 $prep->bind_param("sss",$relationToReporter, $incidenceDescription,$locationType);
 
-if (isset($_POST['submit'])){
-  if(isset($_POST['radioR'])){
-    $relationToReporter = $_POST['radioR'];
-  }
-}
-$incidenceDescription= $_POST["incidenceDescription"];
-$locationType= $_POST["location"];
+// if (isset($_POST['submit'])){
+//   if(isset($_POST['radioR'])){
+//     $relationToReporter = $_POST['radioR'];
+//   }
+// }
+// $incidenceDescription= $_POST["incidenceDescription"];
+// $locationType= $_POST["location"];
 
-// $relationToReporter="hi";
-// $incidenceDescription="hi";
-// $locationType="hi";
+$relationToReporter="Unknown";
+$incidenceDescription="Verbally harassed in the streets";
+$locationType="yonge street";
 
 $prep->execute() or die ("insert error for harassment incidence failed");
 
