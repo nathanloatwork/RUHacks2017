@@ -313,9 +313,9 @@
             <h2 class="text-center">data</h2>
             <div class = "accordion-group text-center">
                 <div id = "btnGroup">
-                    <a class="btn btn-primary" data-toggle="collapse" data-parent="#btnGroup" data-target="#lineChart"> Line </a>
-                    <a class="btn btn-primary" onclick = "mapResizeDelay();" data-toggle="collapse" data-parent="#btnGroup" data-target="#mapChart"> Map </a>
-                    <a class="btn btn-primary" data-toggle="collapse" data-parent="#btnGroup" data-target="#pieChart"> Pie </a>
+                    <a id="lineId" class="btn btn-primary" data-toggle="collapse" data-parent="#btnGroup" data-target="#lineChart"> Line </a>
+                    <a id="mapId" class="btn btn-primary" onclick = "mapResizeDelay();" data-toggle="collapse" data-parent="#btnGroup" data-target="#mapChart"> Map </a>
+                    <a id="pieId" class="btn btn-primary" data-toggle="collapse" data-parent="#btnGroup" data-target="#pieChart"> Pie </a>
                     
                     <div class="collapse indent" id="lineChart">
                         <div class="container">
@@ -776,6 +776,38 @@
     <script src="js/contact_me.js"></script>
     <!-- Theme JavaScript -->
     <script src="js/freelancer.min.js"></script>
+
+    <!-- Script to toggle all the charts so mutiple dont appear at the same time -->
+    <script>
+    $(document).ready(function(){
+        $("#lineId").click(function(){
+          if( $("#mapChart").hasClass('in')){
+            $("#mapChart").collapse("toggle");
+          } // toggle collapse
+          if( $("#pieChart").hasClass('in')){
+            $("#pieChart").collapse('toggle'); // toggle collapse
+          }
+        });
+
+        $("#mapId").click(function(){
+          if( $("#lineChart").hasClass('in')){
+            $("#lineChart").collapse("toggle");
+          } // toggle collapse
+          if( $("#pieChart").hasClass('in')){
+            $("#pieChart").collapse('toggle'); // toggle collapse
+          }
+        });
+
+        $("#pieId").click(function(){
+          if( $("#lineChart").hasClass('in')){
+            $("#lineChart").collapse("toggle");
+          } // toggle collapse
+          if( $("#mapChart").hasClass('in')){
+            $("#mapChart").collapse("toggle");
+          } // toggle collapse
+        });
+    });
+  </script>
 </body>
 </html>
 Contact GitHub API Training Shop Blog About
